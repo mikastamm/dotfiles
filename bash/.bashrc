@@ -155,17 +155,19 @@ source "$OSH"/oh-my-bash.sh
 # alias bashconfig="mate ~/.bashrc"
 # alias ohmybash="mate ~/.oh-my-bash"
 
-# Shared dev tools (installed in /home/dev, used by all users)
-export NVM_DIR="/home/dev/.nvm"
+# nvm
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
-export PYENV_ROOT="/home/dev/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - bash)"
 eval "$(pyenv virtualenv-init -)"
 
-export DOTNET_ROOT="/home/dev/.dotnet"
+# dotnet
+export DOTNET_ROOT="$HOME/.dotnet"
 export PATH="$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools"
 
 # CLI tool aliases
@@ -176,3 +178,7 @@ alias fd='fdfind'
 if [[ $- == *i* ]]; then
   echo -e "\033[0;36m$(hostname)\033[0m | $(uptime -p) | RAM: $(free -h | awk '/Mem:/ {print $3"/"$2}') | Disk: $(df -h / | awk 'NR==2 {print $3"/"$2}')"
 fi
+export PATH="$HOME/.local/bin:$PATH"
+
+# dotfiles bin
+export PATH="$HOME/dotfiles/bin:$PATH"
