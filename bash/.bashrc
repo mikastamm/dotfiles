@@ -6,7 +6,7 @@ esac
 
 # Auto-start tmux on SSH login
 if [[ -n "$SSH_CONNECTION" ]] && [[ -z "$TMUX" ]] && command -v tmux &>/dev/null; then
-  tmux new-session -A -s main
+  tmux new-session
 fi
 
 # Path to your oh-my-bash installation.
