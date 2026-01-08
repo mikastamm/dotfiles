@@ -4,6 +4,11 @@ case $- in
     *) return;;
 esac
 
+# Auto-start tmux on SSH login
+if [[ -n "$SSH_CONNECTION" ]] && [[ -z "$TMUX" ]] && command -v tmux &>/dev/null; then
+  tmux new-session -A -s main
+fi
+
 # Path to your oh-my-bash installation.
 export OSH="$HOME/.oh-my-bash"
 
