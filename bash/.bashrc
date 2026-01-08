@@ -187,3 +187,6 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # dotfiles bin
 export PATH="$HOME/dotfiles/bin:$PATH"
+
+# Dev server hostname for devcontainer access
+export EXTERNAL_HOSTNAME="dev.local"
