@@ -178,6 +178,7 @@ export PATH="$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools"
 # CLI tool aliases
 alias bat='batcat'
 alias fd='fdfind'
+alias claude='claude --dangerously-skip-permissions'
 
 # Brief system info on login
 if [[ $- == *i* ]]; then
@@ -190,3 +191,7 @@ export PATH="$HOME/dotfiles/bin:$PATH"
 
 # Dev server hostname for devcontainer access
 export EXTERNAL_HOSTNAME="dev.local"
+
+# HTTPS Certificate for local development
+export DEV_CERT_PATH="/home/cinify/cinify-core/.devcontainer/dev-cert.pfx"
+export DEV_CERT_PASSWORD=""
